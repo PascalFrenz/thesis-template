@@ -8,14 +8,14 @@
   , parskip=half       % Absätze durch einen vergrößerten Zeilenabstand getrennt
 %  , draft              % Entwurfsversion
   ]{scrreprt}          % Dokumentenklasse: KOMA-Script Buch
-  
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Packages
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{scrhack}
 
- 
+
 \usepackage{ifpdf}
 \ifpdf
   \usepackage{ae}               % Fonts für pdfLaTeX, falls keine cm-super-Fonts installiert
@@ -29,12 +29,12 @@
             inner=2.0cm,outer=2.0cm,bindingoffset=0.5cm,%
             top=1.5cm,bottom=1.5cm,%
             footskip=1.0cm,includeheadfoot]{geometry}
-            
+
 \usepackage[utf8]{inputenc}         % Input encoding (allow direct use of special characters like "ä")
 %\usepackage[english]{babel}
 \usepackage[ngerman]{babel}
 \usepackage[T1]{fontenc}
-\usepackage[automark]{scrpage2} 	 % Schickerer Satzspiegel mit KOMA-Script
+\usepackage[automark]{scrlayer-scrpage} 	 % Schickerer Satzspiegel mit KOMA-Script
 \usepackage{setspace}           	 % Allow the modification of the space between lines
 \usepackage{booktabs}           	 % Netteres Tabellenlayout
 \usepackage{multicol}               % Mehrspaltige Bereiche

@@ -1,0 +1,1 @@
+FROM registry.gitlab.com/islandoftex/images/texlive:TL2021-2021-05-30-07-10-doc

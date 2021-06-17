@@ -1,0 +1,101 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.177.0/containers/docker-existing-dockerfile
+{
+	"name": "Existing Dockerfile",
+
+	// Sets the run context to one level up instead of the .devcontainer folder.
+	"context": "..",
+
+	"dockerFile": "Dockerfile",
+
+	// Set *default* container specific settings.json values on container create.
+	"settings": {
+		"terminal.integrated.shell.linux": null,
+		"latex-workshop.latex.autoClean.run": "onBuilt",
+		"latex-workshop.latex.clean.subfolder.enabled": true,
+		"latex-workshop.latex.recipes": [{
+			"name": "arara",
+			"tools": [
+			  "arara"
+			]
+		  },
+		  {
+			"name": "arara-verbose",
+			"tools": [
+			  "arara-verbose"
+			]
+		  }],
+		  "latex-workshop.latex.tools": [{
+			"name": "arara",
+			"command": "arara",
+			"args": [
+			    "%DOC%"
+			],
+			"env": {}
+		  },
+		  {
+			"name": "arara-verbose",
+			"command": "arara",
+			"args": [
+				"-v",
+			    "%DOC%"
+			],
+			"env": {}
+		  }],
+		  "latex-workshop.latex.clean.fileTypes": [
+			"*.aux",
+			"*.bbl",
+			"*.blg",
+			"*.idx",
+			"*.ind",
+			"*.lof",
+			"*.lot",
+			"*.out",
+			"*.toc",
+			"*.acn",
+			"*.acr",
+			"*.alg",
+			"*.glg",
+			"*.glo",
+			"*.gls",
+			"*.fls",
+			"*.log",
+			"*.fdb_latexmk",
+			"*.snm",
+			"*.synctex(busy)",
+			"*.synctex.gz(busy)",
+			"*.nav",
+			"*.lol",
+			"*.bcf",
+			"*.run.xml",
+			"*-blx.bib"
+		],
+		"latex-workshop.latex.autoBuild.run": "onSave",
+		"ltex.additionalRules.enablePickyRules": true,
+		"ltex.language": "de-DE"
+	},
+
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"james-yu.latex-workshop",
+		"shardulm94.trailing-spaces",
+		"k--kato.intellij-idea-keybindings",
+		"visualstudioexptteam.vscodeintellicode",
+		"valentjn.vscode-ltex"
+	]
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Uncomment the next line to run commands after the container is created - for example installing curl.
+	// "postCreateCommand": "apt-get update && apt-get install -y curl",
+
+	// Uncomment when using a ptrace-based debugger like C++, Go, and Rust
+	// "runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
+
+	// Uncomment to use the Docker CLI from inside the container. See https://aka.ms/vscode-remote/samples/docker-from-docker.
+	// "mounts": [ "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind" ],
+
+	// Uncomment to connect as a non-root user if you've added one. See https://aka.ms/vscode-remote/containers/non-root.
+	// "remoteUser": "vscode"
+}
